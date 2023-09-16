@@ -19,6 +19,7 @@ name = "output_openapi"
 [dependencies]
 common = { path = "../crates/common" ,features = ["sea-orm", "actix-web"]}
 helper_macros = { path = "../crates/helper_macros"}
+tokio = {workspace=true}
 
 actix-web = { workspace=true, features = ["rustls-0_21"] }
 actix-service = "2"
@@ -55,7 +56,7 @@ async-trait = "0.1"
 ahash = "0.8"
 utoipa = { workspace=true, features = ["actix_extras"] }
 utoipa-swagger-ui = { git="https://github.com/wyatt-herkamp/utoipa.git", features = ["actix-web"] }
-clap = { version = "4.1.1",features = ["derive"] }
+clap = { workspace=true }
 redb = { version = "1"}
 simdutf8= {version="0.1.4"}
 bytes = "1.4.0"
@@ -78,10 +79,6 @@ opentelemetry-otlp = { version = "0.13", default-features = true , features = ["
 
 # Tracing OpenTelemetry - Tracing subscriber for OpenTelemetry
 tracing-opentelemetry = "0.21"
-
-[dependencies.tokio]
-version = "1"
-features = ["full"]
 
 [build-dependencies]
 vergen = { version = "8.0.0" }
