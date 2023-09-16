@@ -1,0 +1,33 @@
+[workspace]
+members = [
+    "crates/common",
+    "crates/entities",
+    "crates/migration",
+    "crates/helper_macros",
+    "server"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+license = "MIT"
+authors = ["Wyatt Jacob Herkamp <wherkamp@gmail.com>"]
+[workspace.dependencies]
+actix-web = { version = "4.4" }
+
+serde = { version = "1" ,features = ["derive"]}
+serde_json = "1"
+chrono = { version = "0.4",features = ["serde"] }
+
+rand = "0.8"
+sea-orm = { version = "0.12",features = [ "macros", "sqlx-postgres","postgres-array"] }
+sqlx = "0.7"
+strum = { version = "0.25" ,features = ["derive"]}
+mime = {git="https://github.com/hyperium/mime.git",features = ["serde1"] }
+http = "0.2.9"
+bytes = "1"
+digestible = {version = "0.2", features = ["base64"]}
+utoipa = { git="https://github.com/wyatt-herkamp/utoipa.git", features = ["chrono"] }
+typeshare = "1"
+thiserror = "1"
+[profile.dev.package.tokio]
+opt-level = 3

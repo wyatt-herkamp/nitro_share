@@ -1,0 +1,8 @@
+target
+Cargo.lock
+test_instance
+.idea
+
+# Frontend
+nitro-share-frontend/dist
+nitro-share-frontend/node_modules
